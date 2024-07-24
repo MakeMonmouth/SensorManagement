@@ -53,7 +53,6 @@ CSRF_TRUSTED_ORIGINS = [
     "https://*.ngrok.io",
     "https://*.127.0.0.1",
     "https://localhost",
-    "https://scavhunt.wallace.network",
 ]
 
 ALLOWED_HOSTS = []

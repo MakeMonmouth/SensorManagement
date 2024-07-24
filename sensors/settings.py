@@ -43,7 +43,7 @@ TTN_APP_NAME = env("TTN_APP_NAME")
 TOUCHPOINT_TOKEN = env("TOUCHPOINT_TOKEN")
 
 # SECURITY INFOING: don't run with debug turned on in production!
-DEBUG = True  # env("DJANGO_DEBUG")
+DEBUG = True
 
 
 ALLOWED_HOSTS = ["*"]  # env("ALLOWED_HOSTS")

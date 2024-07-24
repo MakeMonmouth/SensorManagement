@@ -130,6 +130,9 @@ class MetricType(models.Model):
     description = models.CharField(max_length=255)
     unit = models.CharField(max_length=100)
 
+    def __str__(self):
+        return f"{ self.name } ({self.description}) [{self.unit}]"
+
 class DeviceMetric(models.Model):
     device = models.ForeignKey(Device, on_delete=models.CASCADE)
     measurement_type = models.ForeignKey(MetricType, on_delete=models.CASCADE)

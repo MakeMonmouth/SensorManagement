@@ -62,7 +62,7 @@ def get_ttn_details(device_id=None, app_name=None, auth_token=None):
             response_dev_eui[i : i + chunk_size]
             for i in range(0, len(response_dev_eui), chunk_size)
         ]
-        response_app_eui = rj["ids"]["dev_eui"]
+        response_app_eui = "0000000000000000"
         app_eui = [
             response_app_eui[i : i + chunk_size]
             for i in range(0, len(response_app_eui), chunk_size)
@@ -104,7 +104,7 @@ def ttn_registration(
 
     padding = "".join(random.choice(string.digits) for i in range(4))
     dev_eui = f"{device_mac}" # {padding}"
-    join_eui = f"{device_mac}" #{padding}"
+    join_eui = "0000000000000000"
     device_id = device_name
     device_name = device_name
 

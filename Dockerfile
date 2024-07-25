@@ -30,4 +30,4 @@ RUN apt remove -y postgresql-server-dev-all build-essential gcc
 
 COPY . .
 RUN touch /usr/app/config.yaml
-CMD exec poetry run opentelemetry-instrument --traces_exporter console,otlp --metrics_exporter console,otlp --logs_exporter console,otlp --service_name ${SERVICE_NAME} python ./manage.py runserver --noreload
+CMD exec poetry run opentelemetry-instrument --traces_exporter console,otlp --metrics_exporter console,otlp --logs_exporter console,otlp --service_name ${SERVICE_NAME} python ./manage.py runserver 0.0.0.0:8000 --noreload

@@ -71,7 +71,8 @@ INSTALLED_APPS = [
     "django_prometheus",
     "crispy_forms",
     "geoposition",
-    "devices"
+    "devices",
+    "rest_framework",
 ]
 
 MIDDLEWARE = [

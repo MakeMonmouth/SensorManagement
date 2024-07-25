@@ -16,8 +16,28 @@ Including another URLconf
 """
 
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
+from rest_framework import routers, serializers, viewsets
+from devices.models import Device
+
+# Serializers define the API representation.
+class DeviceSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Device
+        fields = ["id", "name", "macaddress", "geolocation", "w3w_location"]
+
+# ViewSets define the view behavior.
+class DeviceViewSet(viewsets.ModelViewSet):
+    queryset = Device.objects.all()
+    serializer_class = DeviceSerializer
+    lookup_field = 'name'
+
+# Routers provide an easy way of automatically determining the URL conf.
+router = routers.DefaultRouter()
+router.register(r'devices', DeviceViewSet)
 
 urlpatterns = [
+    path('', include(router.urls)),
     path("admin/", admin.site.urls),
+    path("api/", include("rest_framework.urls", namespace="rest_framework"))
 ]

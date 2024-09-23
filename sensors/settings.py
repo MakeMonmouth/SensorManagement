@@ -49,11 +49,7 @@ DEBUG = env.bool("DJANGO_DEBUG")
 ALLOWED_HOSTS = env.list("DJANGO_ALLOWED_HOSTS")
 
 
-CSRF_TRUSTED_ORIGINS = [
-    "https://*.ngrok.io",
-    "https://*.127.0.0.1",
-    "https://localhost",
-]
+CSRF_TRUSTED_ORIGINS = env.list("DJANGO_TRUSTED_ORIGINS")
 
 # Application definition
 

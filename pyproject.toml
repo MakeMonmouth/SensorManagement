@@ -8,7 +8,7 @@ packages = [{include = "sensors"}]
 
 [tool.poetry.dependencies]
 python = "^3.10"
-Django = "^5.0.6"
+Django = "^5.0.8"
 black = "^24.4.2"
 opentelemetry-exporter-otlp = "^1.25.0"
 opentelemetry-instrumentation-django = "^0.46b0"

@@ -43,10 +43,10 @@ TTN_APP_NAME = env("TTN_APP_NAME")
 TOUCHPOINT_TOKEN = env("TOUCHPOINT_TOKEN")
 
 # SECURITY INFOING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = env("DJANGO_DEBUG")
 
 
-ALLOWED_HOSTS = ["*"]  # env("ALLOWED_HOSTS")
+ALLOWED_HOSTS = env("DJANGO_ALLOWED_HOSTS")
 
 
 CSRF_TRUSTED_ORIGINS = [
@@ -54,9 +54,6 @@ CSRF_TRUSTED_ORIGINS = [
     "https://*.127.0.0.1",
     "https://localhost",
 ]
-
-ALLOWED_HOSTS = []
-
 
 # Application definition
 

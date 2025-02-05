@@ -17,7 +17,7 @@ ENV TTN_APP_NAME=""
 ENV DJANGO_SECRET_KEY=""
 ENV DJANGO_DEBUG="False"
 ENV DJANGO_SETTINGS_MODULE=sensors.settings
-ENV DJANGO_ALLOWED_HOSTS
+ENV DJANGO_ALLOWED_HOSTS=${DJANGO_ALLOWED_HOSTS}
 
 WORKDIR /usr/app
 
@@ -25,7 +25,7 @@ RUN pip install poetry
 
 COPY pyproject.toml poetry.lock ./
 
-RUN poetry install
+RUN poetry install --no-root
 
 RUN apt remove -y postgresql-server-dev-all build-essential gcc
 
